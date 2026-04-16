@@ -1358,7 +1358,7 @@ footer {
    ANIMATIONS & REVEAL
 ══════════════════════════════ */
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(22px); }
+  from { opacity: 0.12; transform: translateY(22px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 @keyframes fadeIn {
@@ -1961,7 +1961,7 @@ footer {
   .hero-btns { flex-direction: column; }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 480px) {
   .shop-grid { grid-template-columns: 1fr; }
   .featured-grid { grid-template-columns: 1fr; }
 }

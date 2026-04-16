@@ -86,7 +86,7 @@
 
   const revealElements = [...document.querySelectorAll('.reveal')];
   revealElements.forEach((element, index) => {
-    element.style.setProperty('--reveal-delay', `${Math.min(index * 0.05, 0.4)}s`);
+    element.style.setProperty('--reveal-delay', `${Math.min(index * 0.05, 0.4) * 0.8 }s`);
   });
 
   if (prefersReducedMotion) {
