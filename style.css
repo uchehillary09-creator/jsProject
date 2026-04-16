@@ -793,10 +793,11 @@ section { padding: 7rem 5%; }
 .shop-card-actions {
   position: absolute;
   bottom: 1rem;
-  left: 1rem;
   right: 1rem;
   display: flex;
+  flex-direction: column;
   gap: 0.5rem;
+  align-items: flex-end;
   opacity: 0;
   transform: translateY(8px);
   transition: var(--trans);
@@ -804,33 +805,57 @@ section { padding: 7rem 5%; }
 }
 .shop-card:hover .shop-card-actions { opacity: 1; transform: translateY(0); }
 .action-btn {
-  flex: 1;
+  width: 44px;
+  height: 44px;
   background: var(--gold);
   color: var(--black);
   border: none;
-  padding: 0.6rem;
-  font-family: var(--sans);
-  font-size: 0.65rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  font-weight: 600;
-  cursor: pointer;
-  transition: var(--trans);
-}
-.action-btn:hover { background: var(--gold-light); }
-.action-btn-outline {
-  flex: 0 0 42px;
-  background: rgba(10,10,10,0.85);
-  border: 1px solid rgba(255,255,255,0.2);
-  color: var(--white);
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1rem;
+  font-size: 1.35rem;
+  font-family: var(--sans);
+  font-weight: 700;
   cursor: pointer;
   transition: var(--trans);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  margin-bottom: 0.1rem;
 }
-.action-btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+.action-btn:hover { background: var(--gold-light); }
+
+/* Remove outline style, all action-btns unified above */
+
+.action-btn i {
+  font-size: 1.35rem;
+  font-weight: 900;
+}
+
+.action-btn-enquire {
+  background: var(--gold);
+  color: var(--black);
+}
+.action-btn-cart {
+  background: var(--black);
+  color: var(--gold);
+}
+.action-btn-wishlist {
+  background: var(--white);
+  color: var(--gold);
+}
+/* Add hover effects for each */
+.action-btn-enquire:hover {
+  background: var(--gold-light);
+  color: var(--black);
+}
+.action-btn-cart:hover {
+  background: var(--gold);
+  color: var(--black);
+}
+.action-btn-wishlist:hover {
+  background: var(--gold);
+  color: var(--white);
+}
 
 .shop-card-info {
   padding: 1.2rem 1.2rem 1.4rem;
