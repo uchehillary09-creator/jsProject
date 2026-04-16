@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shop | Neyduh's Fashion Hub</title>
+  <meta name="description" content="Shop Neyduh's Fashion Hub collections for women's fashion, menswear, eveningwear, streetwear, and bridal-inspired luxury pieces."/>
+  <meta name="theme-color" content="#090909"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+<body class="inner-page">
+
+<a class="skip-link" href="#mainContent">Skip to content</a>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="index.html" class="nav-logo">Neyduh's <span>Fashion Hub</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="bespoke.html">Bespoke</a></li>
+    <li><a href="bridal.html">Bridal</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li style="position:relative;"><a href="wishlist.html">Wishlist <span id="wishlistBadge" style="position:absolute;top:-8px;right:-12px;background:var(--gold);color:var(--black);width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:700;">0</span></a></li>
+    <li style="position:relative;"><a href="cart.html"><i class="fa-solid fa-shopping-cart" style="font-size:1.1rem;"></i> <span id="cartBadge" style="position:absolute;top:-8px;right:-12px;background:var(--gold);color:var(--black);width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:700;">0</span></a></li>
+    <li><a href="shop.html" class="nav-shop-btn">Shop Now</a></li>
+  </ul>
+  <button class="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+
+<main id="mainContent">
+
+<!-- SHOP HERO -->
+<div class="shop-hero">
+  <div class="section-shell">
+    <div class="micro-pill">The Full Collection</div>
+    <h1 style="font-family:var(--serif);font-size:clamp(2.5rem,5vw,4.5rem);font-weight:400;color:var(--white);line-height:1.08;">
+      Shop <em style="font-style:italic;color:var(--gold);">Neyduh's</em><br>Fashion Hub
+    </h1>
+    <p style="color:var(--gray);max-width:560px;margin-top:1rem;font-size:0.92rem;line-height:1.85;">
+      A curated edit of ready-to-wear, occasion dressing, sharp tailoring, and bridal-inspired glamour for women and men who want polish with presence.
+    </p>
+  </div>
+</div>
+
+<!-- TOOLBAR -->
+<div class="shop-toolbar">
+  <div class="filter-tabs">
+    <button class="filter-tab active" data-cat="all">All Pieces</button>
+    <button class="filter-tab" data-cat="women">Women</button>
+    <button class="filter-tab" data-cat="men">Men</button>
+    <button class="filter-tab" data-cat="evening">Evening Wear</button>
+    <button class="filter-tab" data-cat="streetwear">Streetwear</button>
+    <button class="filter-tab" data-cat="bridal">Bridal</button>
+  </div>
+  <div style="display:flex;align-items:center;gap:1rem;">
+    <span class="shop-count" id="shopCount">18 pieces</span>
+    <select class="shop-sort" id="shopSort">
+      <option value="default">Sort By</option>
+      <option value="low">Price: Low to High</option>
+      <option value="high">Price: High to Low</option>
+    </select>
+  </div>
+</div>
+
+<!-- SHOP GRID -->
+<section class="shop-section">
+  <div class="shop-grid" id="shopGrid">
+
+    <!-- WOMEN'S -->
+    <div class="shop-card reveal" data-cat="women" data-product-id="product-1">
+      <div class="shop-card-img">
+        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=700&q=80" alt="Silk Midi Dress" style="object-position:top"/>
+        <div class="shop-card-badge badge-new">New</div>
+        <div class="shop-card-actions">
+          <button class="action-btn" title="Enquire on WhatsApp" aria-label="Enquire on WhatsApp">
+            <span style="font-size:1.2em;vertical-align:middle;">🟢</span>
+          </button>
+          <button class="action-btn-cart" title="Add to Cart" aria-label="Add to Cart">
+            <span style="font-size:1.2em;vertical-align:middle;">🛒</span>
+          </button>
+          <button class="action-btn-outline" title="Add to Wishlist" aria-label="Add to Wishlist">
+            <span style="font-size:1.2em;vertical-align:middle;">♡</span>
+          </button>
+        </div>
+      </div>
+      <div class="shop-card-info">
+        <div class="shop-card-category">Women RTW</div>
+        <div class="shop-card-name">Midnight Silk Midi Dress</div>
+        <div class="shop-card-desc">Luxurious silk-blend midi dress with a deep V neckline and flared skirt. Perfect for evening events and galas.</div>
+        <div class="shop-card-footer">
+          <div class="shop-card-price">165,000</div>
+          <div class="shop-card-sizes">
+            <div class="size-dot">XS</div><div class="size-dot">S</div><div class="size-dot">M</div><div class="size-dot">L</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="shop-card reveal" data-cat="women" data-product-id="product-2">
+      <div class="shop-card-img">
+        <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=700&q=80" alt="Blazer Dress" style="object-position:top"/>
+        <div class="shop-card-badge badge-hot">Hot</div>
+        <div class="shop-card-actions">
+          <button class="action-btn" title="Enquire on WhatsApp" aria-label="Enquire on WhatsApp">
+            <span style="font-size:1.2em;vertical-align:middle;">🟢</span>
+          </button>
+          <button class="action-btn-cart" title="Add to Cart" aria-label="Add to Cart">
+            <span style="font-size:1.2em;vertical-align:middle;">🛒</span>
+          </button>
+          <button class="action-btn-outline" title="Add to Wishlist" aria-label="Add to Wishlist">
+            <span style="font-size:1.2em;vertical-align:middle;">♡</span>
+          </button>
+        </div>
+      </div>
+      <div class="shop-card-info">
+        <div class="shop-card-category">Women Power Dressing</div>
+        <div class="shop-card-name">Black Power Blazer Dress</div>
+        <div class="shop-card-desc">Structured blazer-cut dress in premium black crepe. Belt-fastened with sharp lapels � authority meets elegance.</div>
+        <div class="shop-card-footer">
+          <div class="shop-card-price">148,000</div>
+          <div class="shop-card-sizes">
+            <div class="size-dot">S</div><div class="size-dot">M</div><div class="size-dot">L</div><div class="size-dot">XL</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="shop-card reveal" data-cat="women" data-product-id="product-3">
+      <div class="shop-card-img">
+        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=700&q=80" alt="Summer Chic" style="object-position:top"/>
+        <div class="shop-card-badge badge-sale">Sale</div>
+        <div class="shop-card-actions">
+          <button class="action-btn" title="Enquire on WhatsApp" aria-label="Enquire on WhatsApp">
+            <span style="font-size:1.2em;vertical-align:middle;">🟢</span>
+          </button>
+          <button class="action-btn-cart" title="Add to Cart" aria-label="Add to Cart">
+            <span style="font-size:1.2em;vertical-align:middle;">🛒</span>
+          </button>
+          <button class="action-btn-outline" title="Add to Wishlist" aria-label="Add to Wishlist">
+            <span style="font-size:1.2em;vertical-align:middle;">♡</span>
+          </button>
+        </div>
+      </div>
+      <div class="shop-card-info">
+        <div class="shop-card-category">Women RTW</div>
+        <div class="shop-card-name">Golden Hour Co-ord Set</div>
+        <div class="shop-card-desc">Two-piece co-ord in breezy linen fabric. Relaxed-fit trousers and a crop top � minimal, confident, and chic.</div>
+        <div class="shop-card-footer">
+          <div class="shop-card-price">88,000 <del>120,000</del></div>
+          <div class="shop-card-sizes">
+            <div class="size-dot">XS</div><div class="size-dot">S</div><div class="size-dot">M</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="shop-card reveal" data-cat="women" data-product-id="product-4">
+      <div class="shop-card-img">
+        <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=700&q=80" alt="Maxi Gown" style="object-position:top"/>
+        <div class="shop-card-badge badge-new">New</div>
+        <div class="shop-card-actions">
+          <button class="action-btn" title="Enquire on WhatsApp" aria-label="Enquire on WhatsApp">
+            <span style="font-size:1.2em;vertical-align:middle;">🟢</span>
+          </button>
+          <button class="action-btn-cart" title="Add to Cart" aria-label="Add to Cart">
+            <span style="font-size:1.2em;vertical-align:middle;">🛒</span>
+          </button>
+          <button class="action-btn-outline" title="Add to Wishlist" aria-label="Add to Wishlist">
+            <span style="font-size:1.2em;vertical-align:middle;">♡</span>
+          </button>
+        </div>
+      </div>
+      <div class="shop-card-info">
+        <div class="shop-card-category">Women Evening</div>
+        <div class="shop-card-name">Noir Halter Maxi Gown</div>
+        <div class="shop-card-desc">Floor-length satin halter gown with a plunging back and subtle thigh split. Effortlessly dramatic and sensual.</div>
+        <div class="shop-card-footer">
+          <div class="shop-card-price">195,000</div>
+          <div class="shop-card-sizes">
+            <div class="size-dot">XS</div><div class="size-dot">S</div><div class="size-dot">M</div><div class="size-dot">L</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="shop-card reveal" data-cat="women" data-product-id="product-5">
+      <div class="shop-card-img">
+        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=700&q=80" alt="Bodycon Dress" style="object-position:top"/>
+        <div class="shop-card-actions">
+          <button class="action-btn" title="Enquire on WhatsApp" aria-label="Enquire on WhatsApp">
+            <span style="font-size:1.2em;vertical-align:middle;">🟢</span>
+          </button>
+          <button class="action-btn-cart" title="Add to Cart" aria-label="Add to Cart">
+            <span style="font-size:1.2em;vertical-align:middle;">🛒</span>
+          </button>
+          <button class="action-btn-outline" title="Add to Wishlist" aria-label="Add to Wishlist">
+            <span style="font-size:1.2em;vertical-align:middle;">♡</span>
+          </button>
+        </div>
+      </div>
+      <div class="shop-card-info">
+        <div class="shop-card-category">Women Evening</div>
+        <div class="shop-card-name">Champagne Bodycon Gown</div>
+        <div class="shop-card-desc">Figure-hugging champagne satin gown with ruched detailing and a sweetheart neckline. Bold, beautiful, unforgettable.</div>
+        <div class="shop-card-footer">
+          <div class="shop-card-price">175,000</div>
+          <div class="shop-card-sizes">
+            <div class="size-dot">XS</div><div class="size-dot">S</div><div class="size-dot">M</div><div class="size-dot">L</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="shop-card reveal" data-cat="women" data-product-id="product-6">
+      <div class="shop-card-img">
+        <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=700&q=80" alt="Trench Coat" style="object-position:top"/>
+        <div class="shop-card-actions">
+          <button class="action-btn" title="Enquire on WhatsApp" aria-label="Enquire on WhatsApp">
+            <span style="font-size:1.2em;vertical-align:middle;">🟢</span>
+          </button>
+          <button class="action-btn-cart" title="Add to Cart" aria-label="Add to Cart">
+            <span style="font-size:1.2em;vertical-align:middle;">🛒</span>
+          </button>
+          <button class="action-btn-outline" title="Add to Wishlist" aria-label="Add to Wishlist">
+            <span style="font-size:1.2em;vertical-align:middle;">♡</span>
+          </button>
+        </div>
+      </div>
+      <div class="shop-card-info">
+        <div class="shop-card-category">Women Outerwear</div>
+        <div class="shop-card-name">Classic Noir Trench Coat</div>
+        <div class="shop-card-desc">Timeless double-breasted trench in heavyweight black cotton blend. Belt-tied waist and gold-tone hardware finishes.</div>
+        <div class="shop-card-footer">
+          <div class="shop-card-price">210,000</div>
+          <div class="shop-card-sizes">
+            <div class="size-dot">S</div><div class="size-dot">M</div><div class="size-dot">L</div><div class="size-dot">XL</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MEN'S -->
+    <div class="shop-card reveal" data-cat="men" data-product-id="product-7">
+      <div class="shop-card-img">
+        <img src="https://images.unsplash.com/photo-1607522370275-f14206abe5d3?w=700&q=80" alt="Men's Suit" style="object-position:top"/>
+        <div class="shop-card-badge badge-hot">Bestseller</div>
+        <div class="shop-card-actions">
+          <button class="action-btn" title="Enquire on WhatsApp" aria-label="Enquire on WhatsApp">
+            <span style="font-size:1.2em;vertical-align:middle;">🟢</span>
+          </button>
+          <button class="action-btn-cart" title="Add to Cart" aria-label="Add to Cart">
+            <span style="font-size:1.2em;vertical-align:middle;">🛒</span>
+          </button>
+          <button class="action-btn-outline" title="Add to Wishlist" aria-label="Add to Wishlist">
+            <span style="font-size:1.2em;vertical-align:middle;">♡</span>
+          </button>
+        </div>
+      </div>
+      <div class="shop-card-info">
+        <div class="shop-card-category">Men Formal</div>
+        <div class="shop-card-name">Onyx Two-Piece Suit</div>
+        <div class="shop-card-desc">Slim-fit charcoal-black suit in Italian wool blend. Notched lapels, single-button closure, fully lined. Power personified.</div>
+        <div class="shop-card-footer">
+          <div class="shop-card-price">280,000</div>
+          <div class="shop-card-sizes">
+            <div class="size-dot">S</div><div class="size-dot">M</div><div class="size-dot">L</div><div class="size-dot">XL</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="shop-card reveal" data-cat="men" data-product-id="product-8">
+      <div class="shop-card-img">
+        <img src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?w=700&q=80" alt="Men's Agbada" style="object-position:top"/>
+        <div class="shop-card-badge badge-new">New</div>
+        <div class="shop-card-actions">
+          <button class="action-btn" title="Enquire on WhatsApp" aria-label="Enquire on WhatsApp">
+            <span style="font-size:1.2em;vertical-align:middle;">🟢</span>
+          </button>
+          <button class="action-btn-cart" title="Add to Cart" aria-label="Add to Cart">
+            <span style="font-size:1.2em;vertical-align:middle;">🛒</span>
+          </button>
+          <button class="action-btn-outline" title="Add to Wishlist" aria-label="Add to Wishlist">
+            <span style="font-size:1.2em;vertical-align:middle;">♡</span>
+          </button>
+        </div>
+      </div>
+      <div class="shop-card-info">
+        <div class="shop-card-category">Men Traditional</div>
+        <div class="shop-card-name">Gold-Trim Agbada Set</div>
+        <div class="shop-card-desc">3-piece agbada ensemble in rich black aso-oke with hand-embroidered gold trim detailing. Regal from every angle.</div>
+        <div class="shop-card-footer">
+          <div class="shop-card-price">320,000</div>
+          <div class="shop-card-sizes">
+            <div class="size-dot">M</div><div class="size-dot">L</div><div class="size-dot">XL</div><div class="size-dot">2XL</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="shop-card reveal" data-cat="men" data-product-id="product-9">
+      <div class="shop-card-img">
+        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=700&q=80" alt="Men's Blazer" style="object-position:top"/>
+        <div class="shop-card-actions">
+          <button class="action-btn" title="Enquire on WhatsApp" aria-label="Enquire on WhatsApp">
+            <span style="font-size:1.2em;vertical-align:middle;">🟢</span>
+          </button>
+          <button class="action-btn-cart" title="Add to Cart" aria-label="Add to Cart">
+            <span style="font-size:1.2em;vertical-align:middle;">🛒</span>
+          </button>
+          <button class="action-btn-outline" title="Add to Wishlist" aria-label="Add to Wishlist">
+            <span style="font-size:1.2em;vertical-align:middle;">♡</span>
+          </button>
+        </div>
+      </div>
+      <div class="shop-card-info">
+        <div class="shop-card-category">Men Smart Casual</div>
+        <div class="shop-card-name">Executive Smart Blazer</div>
+        <div class="shop-card-desc">Unstructured blazer in black cotton-linen. Casual yet sharp � pair with jeans for dinner or trousers for the boardroom.</div>
+        <div class="shop-card-footer">
+          <div class="shop-card-price">145,000</div>
+          <div class="shop-card-sizes">
+            <div class="size-dot">S</div><div class="size-dot">M</div><div class="size-dot">L</div><div class="size-dot">XL</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EVENING WEAR -->
+    <div class="shop-card reveal" data-cat="evening" data-product-id="product-10">
+      <div class="shop-card-img">
+        <img src="https://images.unsplash.com/photo-1550614000-4895a10e1bfd?w=700&q=80" alt="Evening Gown" style="object-position:top"/>
+        <div class="shop-card-badge badge-new">New</div>
+        <div class="shop-card-actions">
+          <button class="action-btn" title="Enquire on WhatsApp" aria-label="Enquire on WhatsApp">
+            <span style="font-size:1.2em;vertical-align:middle;">🟢</span>
+          </button>
+          <button class="action-btn-cart" title="Add to Cart" aria-label="Add to Cart">
+            <span style="font-size:1.2em;vertical-align:middle;">🛒</span>
+          </button>
+          <button class="action-btn-outline" title="Add to Wishlist" aria-label="Add to Wishlist">
+            <span style="font-size:1.2em;vertical-align:middle;">♡</span>
+          </button>
+        </div>
+      </div>
+      <div class="shop-card-info">
+        <div class="shop-card-category">Women Evening</div>
+        <div class="shop-card-name">Velvet Off-Shoulder Gown</div>
+        <div class="shop-card-desc">Sweeping velvet gown with an off-shoulder neckline and dramatic train. Ideal for red carpets, galas, and unforgettable nights.</div>
+        <div class="shop-card-footer">
+          <div class="shop-card-price">240,000</div>
+          <div class="shop-card-sizes">
+            <div class="size-dot">XS</div><div class="size-dot">S</div><div class="size-dot">M</div><div class="size-dot">L</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="shop-card reveal" data-cat="evening" data-product-id="product-11">
+      <div class="shop-card-img">
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=700&q=80" alt="White Evening" style="object-position:top"/>
+        <div class="shop-card-actions">
+          <button class="action-btn" title="Enquire on WhatsApp" aria-label="Enquire on WhatsApp">
+            <span style="font-size:1.2em;vertical-align:middle;">🟢</span>
+          </button>
+          <button class="action-btn-cart" title="Add to Cart" aria-label="Add to Cart">
+            <span style="font-size:1.2em;vertical-align:middle;">🛒</span>
+          </button>
+          <button class="action-btn-outline" title="Add to Wishlist" aria-label="Add to Wishlist">
+            <span style="font-size:1.2em;vertical-align:middle;">♡</span>
+          </button>
+        </div>
+      </div>
+      <div class="shop-card-info">
+        <div class="shop-card-category">Women Evening / Bridal</div>
+        <div class="shop-card-name">White Goddess Gown</div>
+        <div class="shop-card-desc">Ethereal white silk-chiffon gown with soft ruffle layering. Wears beautifully for bridal events, engagement parties, and white parties.</div>
+        <div class="shop-card-footer">
+          <div class="shop-card-price">290,000</div>
+          <div class="shop-card-sizes">
+            <div class="size-dot">XS</div><div class="size-dot">S</div><div class="size-dot">M</div><div class="size-dot">L</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="shop-card reveal" data-cat="evening" data-product-id="product-12">
+      <div class="shop-card-img">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80" alt="Men Evening" style="object-position:top"/>
+        <div class="shop-card-actions">
+          <button class="action-btn" title="Enquire on WhatsApp" aria-label="Enquire on WhatsApp">
+            <span style="font-size:1.2em;vertical-align:middle;">🟢</span>
+          </button>
+          <button class="action-btn-cart" title="Add to Cart" aria-label="Add to Cart">
+            <span style="font-size:1.2em;vertical-align:middle;">🛒</span>
+          </button>
+          <button class="action-btn-outline" title="Add to Wishlist" aria-label="Add to Wishlist">
+            <span style="font-size:1.2em;vertical-align:middle;">♡</span>
+          </button>
+        </div>
+      </div>
+      <div class="shop-card-info">
+        <div class="shop-card-category">Men Evening / Black Tie</div>
+        <div class="shop-card-name">Black Tie Tuxedo Set</div>
+        <div class="shop-card-desc">Peak-lapel tuxedo in luxury black wool-satin blend. Includes matching trousers with satin side stripe. Black tie perfection.</div>
+        <div class="shop-card-footer">
+          <div class="shop-card-price">350,000</div>
+          <div class="shop-card-sizes">
+            <div class="size-dot">S</div><div class="size-dot">M</div><div class="size-dot">L</div><div class="size-dot">XL</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STREETWEAR -->
+    <div class="shop-card reveal" data-cat="streetwear" data-product-id="product-13">
+      <div class="shop-card-img">
+        <img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?w=700&q=80" alt="Streetwear" style="object-position:top"/>
+        <div class="shop-card-badge badge-hot">Trending</div>
+        <div class="shop-card-actions">
+          <button class="action-btn" title="Enquire on WhatsApp" aria-label="Enquire on WhatsApp">
+            <span style="font-size:1.2em;vertical-align:middle;">🟢</span>
+          </button>
+          <button class="action-btn-cart" title="Add to Cart" aria-label="Add to Cart">
+            <span style="font-size:1.2em;vertical-align:middle;">🛒</span>
+          </button>
+          <button class="action-btn-outline" title="Add to Wishlist" aria-label="Add to Wishlist">
+            <span style="font-size:1.2em;vertical-align:middle;">♡</span>
+          </button>
+        </div>
+      </div>
+      <div class="shop-card-info">
+        <div class="shop-card-category">Unisex Streetwear</div>
+        <div class="shop-card-name">Urban Edge Cargo Set</div>
+        <div class="shop-card-desc">Relaxed oversized hoodie and multi-pocket cargo trousers in washed black cotton. The ultimate luxury streetwear statement.</div>
+        <div class="shop-card-footer">
+          <div class="shop-card-price">95,000 <del>130,000</del></div>
+          <div class="shop-card-sizes">
+            <div class="size-dot">S</div><div class="size-dot">M</div><div class="size-dot">L</div><div class="size-dot">XL</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="shop-card reveal" data-cat="streetwear" data-product-id="product-14">
+      <div class="shop-card-img">
+        <img src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?w=700&q=80" alt="Bomber Jacket" style="object-position:top"/>
+        <div class="shop-card-badge badge-new">New</div>
+        <div class="shop-card-actions">
+          <button class="action-btn" title="Enquire on WhatsApp" aria-label="Enquire on WhatsApp">
+            <span style="font-size:1.2em;vertical-align:middle;">🟢</span>
+          </button>
+          <button class="action-btn-cart" title="Add to Cart" aria-label="Add to Cart">
+            <span style="font-size:1.2em;vertical-align:middle;">🛒</span>
+          </button>
+          <button class="action-btn-outline" title="Add to Wishlist" aria-label="Add to Wishlist">
+            <span style="font-size:1.2em;vertical-align:middle;">♡</span>
+          </button>
+        </div>
+      </div>
+      <div class="shop-card-info">
+        <div class="shop-card-category">Unisex Streetwear</div>
+        <div class="shop-card-name">Gold-Stitch Bomber Jacket</div>
+        <div class="shop-card-desc">Premium black satin bomber with gold embroidered Neyduh's logo. Ribbed cuffs and hem, interior lining in contrast gold.</div>
+        <div class="shop-card-footer">
+          <div class="shop-card-price">120,000</div>
+          <div class="shop-card-sizes">
+            <div class="size-dot">S</div><div class="size-dot">M</div><div class="size-dot">L</div><div class="size-dot">XL</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="shop-card reveal" data-cat="streetwear" data-product-id="product-15">
+      <div class="shop-card-img">
+        <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=700&q=80" alt="Jogger Set" style="object-position:top"/>
+        <div class="shop-card-actions">
+          <button class="action-btn" title="Enquire on WhatsApp" aria-label="Enquire on WhatsApp">
+            <span style="font-size:1.2em;vertical-align:middle;">🟢</span>
+          </button>
+          <button class="action-btn-cart" title="Add to Cart" aria-label="Add to Cart">
+            <span style="font-size:1.2em;vertical-align:middle;">🛒</span>
+          </button>
+          <button class="action-btn-outline" title="Add to Wishlist" aria-label="Add to Wishlist">
+            <span style="font-size:1.2em;vertical-align:middle;">♡</span>
+          </button>
+        </div>
+      </div>
+      <div class="shop-card-info">
+        <div class="shop-card-category">Unisex Casual</div>
+        <div class="shop-card-name">Luxury Jogger Set</div>
+        <div class="shop-card-desc">Matching heavyweight jogger and sweatshirt in brushed fleece cotton. Minimal branding, maximum comfort � elevated loungewear.</div>
+        <div class="shop-card-footer">
+          <div class="shop-card-price">75,000</div>
+          <div class="shop-card-sizes">
+            <div class="size-dot">S</div><div class="size-dot">M</div><div class="size-dot">L</div><div class="size-dot">XL</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BRIDAL -->
+    <div class="shop-card reveal" data-cat="bridal" data-product-id="product-16">
+      <div class="shop-card-img">
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=700&q=80" alt="Bridal Gown" style="object-position:top"/>
+        <div class="shop-card-badge badge-new">Bridal</div>
+        <div class="shop-card-actions">
+          <button class="action-btn" title="Enquire on WhatsApp" aria-label="Enquire on WhatsApp">
+            <span style="font-size:1.2em;vertical-align:middle;">🟢</span>
+          </button>
+          <button class="action-btn-cart" title="Add to Cart" aria-label="Add to Cart">
+            <span style="font-size:1.2em;vertical-align:middle;">🛒</span>
+          </button>
+          <button class="action-btn-outline" title="Add to Wishlist" aria-label="Add to Wishlist">
+            <span style="font-size:1.2em;vertical-align:middle;">♡</span>
+          </button>
+        </div>
+      </div>
+      <div class="shop-card-info">
+        <div class="shop-card-category">Bridal Bespoke</div>
+        <div class="shop-card-name">Ivory Lace Bridal Gown</div>
+        <div class="shop-card-desc">Fully bespoke lace bridal gown with a cathedral train, sweetheart bodice, and hand-placed floral appliqu�. A true heirloom.</div>
+        <div class="shop-card-footer">
+          <div class="shop-card-price">From 450,000</div>
+          <div class="shop-card-sizes">
+            <div class="size-dot">Custom</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="shop-card reveal" data-cat="bridal" data-product-id="product-17">
+      <div class="shop-card-img">
+        <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=700&q=80" alt="Groom Suit" style="object-position:top"/>
+        <div class="shop-card-badge badge-new">Bridal</div>
+        <div class="shop-card-actions">
+          <button class="action-btn" title="Enquire on WhatsApp" aria-label="Enquire on WhatsApp">
+            <span style="font-size:1.2em;vertical-align:middle;">🟢</span>
+          </button>
+          <button class="action-btn-cart" title="Add to Cart" aria-label="Add to Cart">
+            <span style="font-size:1.2em;vertical-align:middle;">🛒</span>
+          </button>
+          <button class="action-btn-outline" title="Add to Wishlist" aria-label="Add to Wishlist">
+            <span style="font-size:1.2em;vertical-align:middle;">♡</span>
+          </button>
+        </div>
+      </div>
+      <div class="shop-card-info">
+        <div class="shop-card-category">Bridal Groom</div>
+        <div class="shop-card-name">Bespoke Groom Suit</div>
+        <div class="shop-card-desc">Fully bespoke groom suit in your choice of fabric. Double-breasted or single-button, tailored to exact measurements for the perfect fit.</div>
+        <div class="shop-card-footer">
+          <div class="shop-card-price">From 380,000</div>
+          <div class="shop-card-sizes">
+            <div class="size-dot">Custom</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="shop-card reveal" data-cat="bridal" data-product-id="product-18">
+      <div class="shop-card-img">
+        <img src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=700&q=80" alt="Bridesmaid" style="object-position:top"/>
+        <div class="shop-card-actions">
+          <button class="action-btn" title="Enquire on WhatsApp" aria-label="Enquire on WhatsApp">
+            <span style="font-size:1.2em;vertical-align:middle;">🟢</span>
+          </button>
+          <button class="action-btn-cart" title="Add to Cart" aria-label="Add to Cart">
+            <span style="font-size:1.2em;vertical-align:middle;">🛒</span>
+          </button>
+          <button class="action-btn-outline" title="Add to Wishlist" aria-label="Add to Wishlist">
+            <span style="font-size:1.2em;vertical-align:middle;">♡</span>
+          </button>
+        </div>
+      </div>
+      <div class="shop-card-info">
+        <div class="shop-card-category">Bridal Bridesmaids</div>
+        <div class="shop-card-name">Bridesmaid Set (Per Person)</div>
+        <div class="shop-card-desc">Coordinated bridesmaid gowns in your chosen colour. Each piece tailored individually for a flattering, cohesive bridal party look.</div>
+        <div class="shop-card-footer">
+          <div class="shop-card-price">From 95,000/person</div>
+          <div class="shop-card-sizes">
+            <div class="size-dot">Custom</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /shop-grid -->
+</section>
+
+<section class="utility-page" style="background:var(--black2);">
+  <div class="utility-grid">
+    <article class="utility-card reveal">
+      <div class="micro-pill">Wardrobe Edit</div>
+      <h3>Built for Real Occasions</h3>
+      <p>Every piece is selected to work for celebrations, professional visibility, evenings out, and elevated daywear.</p>
+    </article>
+    <article class="utility-card reveal">
+      <div class="micro-pill">Need Guidance?</div>
+      <h3>Ask Before You Order</h3>
+      <p>Use the enquiry buttons to confirm sizing, fabric feel, delivery timing, or bespoke alternatives directly on WhatsApp.</p>
+    </article>
+    <article class="utility-card reveal">
+      <div class="micro-pill">Beyond RTW</div>
+      <h3>Want a More Personal Fit?</h3>
+      <p>If you love a direction but need something custom, move straight into a private fitting and we will build from there.</p>
+    </article>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div style="background:var(--gold);padding:4rem 5%;text-align:center;">
+  <h2 style="font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:400;color:var(--black);margin-bottom:0.8rem;">
+    Can't Find Exactly What You're Looking For?
+  </h2>
+  <p style="color:rgba(10,10,10,0.65);font-size:0.92rem;margin-bottom:2rem;">
+    Book a bespoke consultation and we'll create something made entirely for you.
+  </p>
+  <a href="bespoke.html" class="btn" style="background:var(--black);color:var(--white);">Explore Bespoke ?</a>
+</div>
+
+<!-- FOOTER -->
+</main>
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo">Neyduh's <span>Fashion Hub</span></a>
+      <p>A Lagos fashion atelier for luxury ready-to-wear, bespoke tailoring, and bridal couture crafted with precision, warmth, and presence.</p>
+      <div class="social-links">
+        <a href="contact.html" class="social-link" aria-label="Contact"><i class="fa-regular fa-envelope"></i></a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=uchehillary09@gmail.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Email"><i class="fa-solid fa-at"></i></a>
+        <a href="https://wa.me/2348076550226" class="social-link" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Collections</h4>
+      <ul>
+        <li><a href="shop.html">Women's Fashion</a></li>
+        <li><a href="shop.html">Men's Fashion</a></li>
+        <li><a href="shop.html">Evening Wear</a></li>
+        <li><a href="shop.html">Streetwear</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="bespoke.html">Bespoke Tailoring</a></li>
+        <li><a href="bridal.html">Bridal Couture</a></li>
+        <li><a href="contact.html">Book a Fitting</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Client Care</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="size-guide.html">Size Guide</a></li>
+        <li><a href="care-guide.html">Care Guide</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span data-current-year></span> Neyduh's Fashion Hub.</span>
+    <span><a href="privacy.html">Privacy</a> � <a href="terms.html">Terms</a> � <a href="mailto:uchehillary09@gmail.com">uchehillary09@gmail.com</a></span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<a class="whatsapp-float" href="https://wa.me/2348076550226" target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+<a class="back-to-top" href="#mainContent" aria-label="Back to top"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a>
+</body>
+</html>
+
+
+

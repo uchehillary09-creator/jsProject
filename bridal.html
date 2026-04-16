@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bridal | Neyduh's Fashion Hub</title>
+  <meta name="description" content="Discover Neyduh's bridal couture experience for wedding gowns, groom looks, traditional bridalwear, and ceremony styling."/>
+  <meta name="theme-color" content="#090909"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <style>
+    .bridal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:3rem;}
+    .bridal-card{position:relative;aspect-ratio:3/4;overflow:hidden;cursor:pointer;background:var(--black3);}
+    .bridal-card img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform 0.7s ease;}
+    .bridal-card:hover img{transform:scale(1.05);}
+    .bridal-card::after{content:'';position:absolute;inset:0;background:rgba(10,10,10,0.18);transition:background var(--trans);}
+    .bridal-card:hover::after{background:rgba(10,10,10,0.42);}
+    .bridal-card-info{position:absolute;bottom:0;left:0;right:0;padding:1.8rem;background:linear-gradient(to top,rgba(10,10,10,0.95),rgba(10,10,10,0.25) 55%,transparent);z-index:2;}
+    .bridal-card-name{font-family:var(--serif);font-size:1.3rem;font-weight:400;color:var(--white);margin-bottom:0.2rem;}
+    .bridal-card-price{font-size:0.85rem;color:var(--gold);font-weight:500;}
+    .bridal-card-desc{margin-top:0.75rem;font-size:0.8rem;line-height:1.7;color:rgba(255,255,255,0.78);max-width:26ch;opacity:0;transform:translateY(10px);transition:opacity var(--trans),transform var(--trans);}
+    .bridal-card:hover .bridal-card-desc{opacity:1;transform:translateY(0);}
+    .bridal-features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:3rem;}
+    .bridal-feat{background:var(--black2);padding:2rem;transition:background var(--trans);}
+    .bridal-feat:hover{background:var(--black3);}
+    .bridal-feat-icon{font-size:1.8rem;margin-bottom:0.8rem;}
+    .bridal-feat h4{font-family:var(--serif);font-size:1.05rem;color:var(--white);margin-bottom:0.4rem;font-weight:400;}
+    .bridal-feat p{font-size:0.82rem;color:var(--gray);line-height:1.75;}
+    .timeline{display:flex;flex-direction:column;gap:0;border:1px solid var(--border);margin-top:3rem;}
+    .tl-row{display:grid;grid-template-columns:80px 1fr;gap:2rem;align-items:center;padding:1.8rem 2rem;border-bottom:1px solid var(--border);background:var(--black2);transition:background var(--trans);}
+    .tl-row:last-child{border-bottom:none;}
+    .tl-row:hover{background:var(--black3);}
+    .tl-num{font-family:var(--serif);font-size:2.8rem;font-weight:400;color:var(--gold-dim);text-align:center;}
+    .tl-body h4{font-size:0.95rem;color:var(--white);margin-bottom:0.25rem;font-weight:500;}
+    .tl-body p{font-size:0.82rem;color:var(--gray);line-height:1.75;}
+    @media(max-width:900px){.bridal-grid{grid-template-columns:1fr 1fr;}.bridal-features-grid{grid-template-columns:1fr;}.tl-row{grid-template-columns:50px 1fr;padding:1.2rem;}}
+    @media(max-width:500px){.bridal-grid{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body class="inner-page">
+
+<a class="skip-link" href="#mainContent">Skip to content</a>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">Neyduh's <span>Fashion Hub</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="bespoke.html">Bespoke</a></li>
+    <li><a href="bridal.html" class="active">Bridal</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li style="position:relative;"><a href="wishlist.html">Wishlist <span id="wishlistBadge" style="position:absolute;top:-8px;right:-12px;background:var(--gold);color:var(--black);width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:700;">0</span></a></li>
+    <li style="position:relative;"><a href="cart.html"><i class="fa-solid fa-shopping-cart" style="font-size:1.1rem;"></i> <span id="cartBadge" style="position:absolute;top:-8px;right:-12px;background:var(--gold);color:var(--black);width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:700;">0</span></a></li>
+    <li><a href="shop.html" class="nav-shop-btn">Shop Now</a></li>
+  </ul>
+  <button class="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+
+<main id="mainContent">
+
+<div class="page-hero">
+  <div class="section-shell">
+    <div class="micro-pill">Bridal Couture</div>
+    <h1>For the Most<br><em>Sacred Day</em></h1>
+    <p>Every bridal look is approached with tenderness, technical precision, and the kind of calm guidance that makes the entire journey feel beautiful, not overwhelming.</p>
+  </div>
+</div>
+
+<!-- BRIDAL GALLERY -->
+<section style="background:var(--black2);">
+  <div class="label reveal">Our Bridal Collection</div>
+  <h2 class="section-title reveal">Bridal Pieces &amp; <em>Pricing</em></h2>
+  <p class="section-sub reveal">Every item below is fully bespoke - made to your exact measurements and vision.</p>
+  <div class="bridal-grid">
+    <div class="bridal-card reveal">
+      <img src="https://images.unsplash.com/photo-1754549229229-a63d681d6993?auto=format&fit=crop&w=1200&q=80" alt="Ivory lace bridal gown"/>
+      <div class="bridal-card-info">
+        <div class="bridal-card-name">Ivory Lace Bridal Gown</div>
+        <div class="bridal-card-price">From &#8358;450,000</div>
+        <div class="bridal-card-desc">A soft lace silhouette with graceful detailing for a timeless aisle moment.</div>
+      </div>
+    </div>
+    <div class="bridal-card reveal">
+      <img src="images/holly-pezant-anAbPzVEKSI-unsplash.jpg" alt="Strapless ballgown"/>
+      <div class="bridal-card-info">
+        <div class="bridal-card-name">Strapless Ballgown</div>
+        <div class="bridal-card-price">From &#8358;520,000</div>
+        <div class="bridal-card-desc">A dramatic full-skirt statement made for grand entrances and unforgettable photos.</div>
+      </div>
+    </div>
+    <div class="bridal-card reveal">
+      <img src="https://images.unsplash.com/photo-1769868800959-533a3f907d60?auto=format&fit=crop&w=1200&q=80" alt="Bespoke groom suit"/>
+      <div class="bridal-card-info">
+        <div class="bridal-card-name">Bespoke Groom Suit</div>
+        <div class="bridal-card-price">From &#8358;380,000</div>
+        <div class="bridal-card-desc">Sharp tailoring, refined structure, and ceremony-ready finishing from lapel to cuff.</div>
+      </div>
+    </div>
+    <div class="bridal-card reveal">
+      <img src="https://images.unsplash.com/photo-1763343145895-dadbe40d0c61?auto=format&fit=crop&w=1200&q=80" alt="Bridesmaid gown set"/>
+      <div class="bridal-card-info">
+        <div class="bridal-card-name">Bridesmaid Gown</div>
+        <div class="bridal-card-price">From &#8358;95,000/person</div>
+        <div class="bridal-card-desc">Coordinated gowns designed to complement the bride without losing their own charm.</div>
+      </div>
+    </div>
+    <div class="bridal-card reveal">
+      <img src="https://images.unsplash.com/photo-1711128640065-cdac1e385dc2?auto=format&fit=crop&w=1200&q=80" alt="Traditional bridal set"/>
+      <div class="bridal-card-info">
+        <div class="bridal-card-name">Traditional Bridal Set</div>
+        <div class="bridal-card-price">From &#8358;280,000</div>
+        <div class="bridal-card-desc">Rich color, ornate detailing, and heritage-inspired styling for the traditional ceremony.</div>
+      </div>
+    </div>
+    <div class="bridal-card reveal">
+      <img src="https://images.unsplash.com/photo-1663044022557-7d5d4c1d5318?auto=format&fit=crop&w=1200&q=80" alt="Groom agbada set"/>
+      <div class="bridal-card-info">
+        <div class="bridal-card-name">Groom Agbada Set</div>
+        <div class="bridal-card-price">From &#8358;350,000</div>
+        <div class="bridal-card-desc">A bold ceremonial agbada look with regal presence and clean, confident structure.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section style="background:var(--black);">
+  <div class="label reveal">Why Neyduh's</div>
+  <h2 class="section-title reveal">The Bridal <em>Experience</em></h2>
+  <div class="bridal-features-grid">
+    <div class="bridal-feat reveal"><div class="bridal-feat-icon">Appointments</div><h4>Private Studio Appointments</h4><p>Every fitting is completely private. Just you, your loved ones, and our dedicated bridal team - unhurried and undistracted.</p></div>
+    <div class="bridal-feat reveal"><div class="bridal-feat-icon">Detail</div><h4>Unlimited Alterations</h4><p>We don't count rounds. We fit until it's absolutely right - even if that means six sessions.</p></div>
+    <div class="bridal-feat reveal"><div class="bridal-feat-icon">Promise</div><h4>Delivery Guarantee</h4><p>We commit to your wedding date the moment you sign. Your dress will be ready. Always.</p></div>
+    <div class="bridal-feat reveal"><div class="bridal-feat-icon">Craft</div><h4>100% Handcrafted</h4><p>No industrial machines. Every seam sewn and every bead placed by hand by our atelier team.</p></div>
+    <div class="bridal-feat reveal"><div class="bridal-feat-icon">Care</div><h4>Post-Wedding Care</h4><p>Garment preservation advice and cleaning guidance after your big day - so the dress lasts generations.</p></div>
+    <div class="bridal-feat reveal"><div class="bridal-feat-icon">Keepsake</div><h4>Signature Neyduh's Box</h4><p>Every bridal garment is delivered in our keepsake box with a personalised handwritten note from the designer.</p></div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section style="background:var(--black2);">
+  <div class="label reveal">Planning Guide</div>
+  <h2 class="section-title reveal">When to <em>Start</em></h2>
+  <p class="section-sub reveal">Bridal couture takes time. Start early and your experience will be seamless, beautiful, and stress-free.</p>
+  <div class="timeline">
+    <div class="tl-row reveal"><div class="tl-num">12</div><div class="tl-body"><h4>12 Months Before - Ideal</h4><p>Start now. Maximum time to refine the design, source special fabrics, and take your time through fittings with zero pressure.</p></div></div>
+    <div class="tl-row reveal"><div class="tl-num">9</div><div class="tl-body"><h4>9 Months Before - Comfortable</h4><p>Still very comfortable. Construction begins, fabric ordered. Plenty of time for multiple fitting sessions.</p></div></div>
+    <div class="tl-row reveal"><div class="tl-num">6</div><div class="tl-body"><h4>6 Months Before - Minimum Recommended</h4><p>Manageable for most styles. We can accommodate 6-month timelines. Rush fees may apply for complex embellishments.</p></div></div>
+    <div class="tl-row reveal"><div class="tl-num">3</div><div class="tl-body"><h4>3 Months - Rush Service</h4><p>For simpler silhouettes we offer rush service. Contact us immediately to check availability - slots are limited.</p></div></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="background:var(--gold);text-align:center;padding:6rem 5%;">
+  <h2 style="font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:400;color:var(--black);margin-bottom:1rem;">Begin Your Bridal <em style="font-style:italic;">Journey</em></h2>
+  <p style="color:rgba(10,10,10,0.6);max-width:440px;margin:0 auto 2.5rem;font-size:0.9rem;line-height:1.85;">Book your complimentary bridal consultation. No commitment required - just a conversation about your dream garment.</p>
+  <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+    <a href="contact.html" class="btn" style="background:var(--black);color:var(--white);">Book Bridal Consultation</a>
+    <a href="https://wa.me/2348076550226" target="_blank" rel="noreferrer" class="btn" style="background:transparent;border:2px solid var(--black);color:var(--black);">Chat on WhatsApp</a>
+  </div>
+</section>
+
+</main>
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand"><a href="index.html" class="footer-logo">Neyduh's <span>Fashion Hub</span></a><p>A Lagos fashion atelier for luxury ready-to-wear, bespoke tailoring, and bridal couture crafted with precision, warmth, and presence.</p><div class="social-links"><a href="contact.html" class="social-link" aria-label="Contact"><i class="fa-regular fa-envelope"></i></a><a href="https://mail.google.com/mail/?view=cm&fs=1&to=uchehillary09@gmail.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Email"><i class="fa-solid fa-at"></i></a><a href="https://wa.me/2348076550226" class="social-link" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a></div></div>
+    <div class="footer-col"><h4>Collections</h4><ul><li><a href="shop.html">Women's</a></li><li><a href="shop.html">Men's</a></li><li><a href="shop.html?cat=bridal">Bridal Edit</a></li></ul></div>
+    <div class="footer-col"><h4>Services</h4><ul><li><a href="bespoke.html">Bespoke</a></li><li><a href="bridal.html">Bridal</a></li><li><a href="contact.html">Book a Consultation</a></li></ul></div>
+    <div class="footer-col"><h4>Client Care</h4><ul><li><a href="about.html">About</a></li><li><a href="size-guide.html">Size Guide</a></li><li><a href="care-guide.html">Care Guide</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>&copy; <span data-current-year></span> Neyduh's Fashion Hub.</span><span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="mailto:uchehillary09@gmail.com">uchehillary09@gmail.com</a></span></div>
+</footer>
+<script src="script.js"></script>
+<a class="whatsapp-float" href="https://wa.me/2348076550226" target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+<a class="back-to-top" href="#mainContent" aria-label="Back to top"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a>
+</body>
+</html>
+
+
+
+

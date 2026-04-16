@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Order Confirmation | Neyduh's Fashion Hub</title>
+  <meta name="description" content="Your order was successful!"/>
+  <meta name="theme-color" content="#090909"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+<body class="inner-page">
+
+<a class="skip-link" href="#mainContent">Skip to content</a>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">Neyduh's <span>Fashion Hub</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="bespoke.html">Bespoke</a></li>
+    <li><a href="bridal.html">Bridal</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li style="position:relative;"><a href="wishlist.html">Wishlist <span id="wishlistBadge" style="position:absolute;top:-8px;right:-12px;background:var(--gold);color:var(--black);width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:700;">0</span></a></li>
+    <li style="position:relative;"><a href="cart.html"><i class="fa-solid fa-shopping-cart" style="font-size:1.1rem;"></i> <span id="cartBadge" style="position:absolute;top:-8px;right:-12px;background:var(--gold);color:var(--black);width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:700;">0</span></a></li>
+    <li><a href="shop.html" class="nav-shop-btn">Shop Now</a></li>
+  </ul>
+  <button class="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+
+<main id="mainContent">
+  <section style="padding:7rem 5% 5rem;min-height:60vh;display:flex;align-items:center;justify-content:center;">
+    <div style="background:rgba(255,255,255,0.04);border:1px solid var(--gold);border-radius:1rem;padding:3rem 2.5rem;max-width:480px;width:100%;text-align:center;box-shadow:0 8px 32px rgba(198,160,93,0.08);">
+      <div style="font-size:3.5rem;color:var(--gold);margin-bottom:1rem;"><i class="fa-solid fa-circle-check"></i></div>
+      <h1 style="font-family:var(--serif);font-size:2.2rem;color:var(--white);margin-bottom:0.7rem;">Order Successful!</h1>
+      <p style="color:var(--gray);font-size:1.1rem;margin-bottom:2.2rem;">Thank you for shopping with Neyduh's Fashion Hub.<br>Your order has been received and is being processed.</p>
+      <div id="orderSummary" style="text-align:left;margin:0 auto 2.2rem auto;max-width:340px;background:rgba(255,255,255,0.03);padding:1.2rem 1rem;border-radius:0.7rem;border:1px solid rgba(198,160,93,0.13);color:var(--white);font-size:1rem;display:none;"></div>
+      <a href="shop.html" class="btn btn-gold" style="margin-right:1rem;">Continue Shopping</a>
+      <a href="index.html" class="btn btn-outline">Go to Home</a>
+    </div>
+  </section>
+</main>
+
+<script>
+// Show order summary if available in sessionStorage
+const summaryDiv = document.getElementById('orderSummary');
+const orderData = sessionStorage.getItem('neyduh_order_summary');
+if (orderData) {
+  const order = JSON.parse(orderData);
+  let html = `<strong>Order Summary</strong><br><br>`;
+  html += `<b>Order Number:</b> #${order.orderNumber}<br>`;
+  html += `<b>Name:</b> ${order.name}<br>`;
+  html += `<b>Email:</b> ${order.email}<br>`;
+  html += `<b>Phone:</b> ${order.phone}<br>`;
+  html += `<b>Address:</b> ${order.address}<br>`;
+  html += `<b>Payment:</b> ${order.payment}<br><br>`;
+  html += `<b>Items:</b><ul style='margin:0 0 0 1.2em;padding:0;'>`;
+  order.items.forEach(item => {
+    html += `<li>${item.name} (${item.category}) x${item.quantity} - ${item.price}</li>`;
+  });
+  html += `</ul><br>`;
+  html += `<b>Total:</b> <span style='color:var(--gold);'>₦${order.total}</span>`;
+  summaryDiv.innerHTML = html;
+  summaryDiv.style.display = 'block';
+  sessionStorage.removeItem('neyduh_order_summary');
+}
+</script>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo">Neyduh's <span>Fashion Hub</span></a>
+      <p>A Lagos fashion atelier for luxury ready-to-wear, bespoke tailoring, and bridal couture crafted with precision, warmth, and presence.</p>
+      <div class="social-links">
+        <a href="contact.html" class="social-link" aria-label="Contact"><i class="fa-regular fa-envelope"></i></a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=uchehillary09@gmail.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Email"><i class="fa-solid fa-at"></i></a>
+        <a href="https://wa.me/2348076550226" class="social-link" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Collections</h4>
+      <ul>
+        <li><a href="shop.html">Women's Fashion</a></li>
+        <li><a href="shop.html">Men's Fashion</a></li>
+        <li><a href="bridal.html">Bridal</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="bespoke.html">Bespoke Tailoring</a></li>
+        <li><a href="bridal.html">Bridal Couture</a></li>
+        <li><a href="contact.html">Book a Fitting</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Client Care</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="size-guide.html">Size Guide</a></li>
+        <li><a href="care-guide.html">Care Guide</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span data-current-year></span> Neyduh's Fashion Hub.</span>
+  </div>
+</footer>
+
+</body>
+</html>
