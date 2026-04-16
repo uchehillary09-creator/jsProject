@@ -363,12 +363,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       addToCart(productId, productData);
       showToast(`${name} added to cart.`);
-      button.textContent = 'Added to Cart ✓';
-      button.disabled = true;
-      setTimeout(() => {
-        button.textContent = 'Add to Cart';
-        button.disabled = false;
-      }, 2000);
+      // Only icon, no text, no overflow
+      button.innerHTML = '<i class="fa-solid fa-cart-plus"></i>';
     });
   });
 
