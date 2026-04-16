@@ -1,34 +1,156 @@
-﻿document.addEventListener('DOMContentLoaded', () => {
-  const WHATSAPP_NUMBER = '2348076550226';
-  const BUSINESS_EMAIL = 'uchehillary09@gmail.com';
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  
-  const openWhatsApp = message => {
-    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-    window.open(url, '_blank', 'noopener');
-  };
+﻿    // ENQUIRE BUTTON (WhatsApp)
+    document.querySelectorAll('.action-btn-enquire').forEach(button => {
+      button.addEventListener('click', function(event) {
+        event.preventDefault();
+        const card = button.closest('.shop-card');
+        const name = card?.querySelector('.shop-card-name')?.textContent?.trim() || 'this piece';
+        const price = card?.querySelector('.shop-card-price')?.textContent?.trim() || 'Price on request';
+        const category = card?.querySelector('.shop-card-category')?.textContent?.trim() || 'Collection';
+        const message = [
+          "Hello Neyduh's Fashion Hub,",
+          '',
+          `I would like to enquire about: ${name}`,
+          `Category: ${category}`,
+          `Price: ${price}`,
+          '',
+          'Please share the next step for ordering.'
+        ].join('\n');
+        openWhatsApp(message);
+        showToast(`Opening WhatsApp for ${name}.`);
+      });
+    });
 
-  const showToast = (message, duration = 3200) => {
-    let toast = document.getElementById('globalToast');
-    if (!toast) {
-      toast = document.createElement('div');
-      toast.id = 'globalToast';
-      toast.className = 'toast';
-      toast.setAttribute('role', 'status');
-      toast.setAttribute('aria-live', 'polite');
-      document.body.appendChild(toast);
-    }
+    // ADD TO WISHLIST BUTTON
+    document.querySelectorAll('.action-btn-wishlist').forEach(button => {
+      button.addEventListener('click', function(event) {
+        event.preventDefault();
+        const card = button.closest('.shop-card');
+        const productId = card?.dataset.productId || card?.querySelector('.shop-card-name')?.textContent;
+        const name = card?.querySelector('.shop-card-name')?.textContent?.trim() || 'Product';
+        const price = card?.querySelector('.shop-card-price')?.textContent?.trim() || 'Price on request';
+        const category = card?.querySelector('.shop-card-category')?.textContent?.trim() || 'Collection';
+        const image = card?.querySelector('img')?.src || '';
+        const productData = { id: productId, name, price, category, image };
+        if (addToWishlist(productId, productData)) {
+          showToast(`${name} added to wishlist.`);
+        } else {
+          showToast(`${name} is already in wishlist.`);
+        }
+        button.innerHTML = '<i class="fa-solid fa-heart"></i>';
+      });
+    });
+  // ENQUIRE BUTTON (WhatsApp)
+  document.querySelectorAll('.action-btn-enquire').forEach(button => {
+    button.addEventListener('click', function(event) {
+      event.preventDefault();
+      const card = button.closest('.shop-card');
+      const name = card?.querySelector('.shop-card-name')?.textContent?.trim() || 'this piece';
+      const price = card?.querySelector('.shop-card-price')?.textContent?.trim() || 'Price on request';
+      const category = card?.querySelector('.shop-card-category')?.textContent?.trim() || 'Collection';
+      const message = [
+        "Hello Neyduh's Fashion Hub,",
+        '',
+        `I would like to enquire about: ${name}`,
+        `Category: ${category}`,
+        `Price: ${price}`,
+        '',
+        'Please share the next step for ordering.'
+      ].join('\n');
+      openWhatsApp(message);
+      showToast(`Opening WhatsApp for ${name}.`);
+    });
+  });
 
-    toast.textContent = message;
-    toast.classList.add('show');
+  // ADD TO WISHLIST BUTTON
+  document.querySelectorAll('.action-btn-wishlist').forEach(button => {
+    button.addEventListener('click', function(event) {
+      event.preventDefault();
+      const card = button.closest('.shop-card');
+      const productId = card?.dataset.productId || card?.querySelector('.shop-card-name')?.textContent;
+      const name = card?.querySelector('.shop-card-name')?.textContent?.trim() || 'Product';
+      const price = card?.querySelector('.shop-card-price')?.textContent?.trim() || 'Price on request';
+      const category = card?.querySelector('.shop-card-category')?.textContent?.trim() || 'Collection';
+      const image = card?.querySelector('img')?.src || '';
+      const productData = { id: productId, name, price, category, image };
+      if (addToWishlist(productId, productData)) {
+        showToast(`${name} added to wishlist.`);
+      } else {
+        showToast(`${name} is already in wishlist.`);
+      }
+      button.innerHTML = '<i class="fa-solid fa-heart"></i>';
+    });
+  });
 
-    window.clearTimeout(showToast.timer);
-    showToast.timer = window.setTimeout(() => {
-      toast.classList.remove('show');
-    }, duration);
-  };
+// --- GLOBAL UTILITY FUNCTIONS ---
+const WHATSAPP_NUMBER = '2348076550226';
+const BUSINESS_EMAIL = 'uchehillary09@gmail.com';
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  window.showToast = showToast;
+function openWhatsApp(message) {
+  const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+  window.open(url, '_blank', 'noopener');
+}
+
+function showToast(message, duration = 3200) {
+  let toast = document.getElementById('globalToast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'globalToast';
+    toast.className = 'toast';
+    toast.setAttribute('role', 'status');
+    toast.setAttribute('aria-live', 'polite');
+    document.body.appendChild(toast);
+  }
+  toast.textContent = message;
+  toast.classList.add('show');
+  window.clearTimeout(showToast.timer);
+  showToast.timer = window.setTimeout(() => {
+    toast.classList.remove('show');
+  }, duration);
+}
+
+window.showToast = showToast;
+
+// --- WISHLIST FUNCTIONS (move to global scope) ---
+const WISHLIST_KEY = 'neyduh_wishlist';
+const CART_KEY = 'neyduh_cart';
+
+function getWishlist() {
+  const data = localStorage.getItem(WISHLIST_KEY);
+  return data ? JSON.parse(data) : [];
+}
+function saveWishlist(wishlist) {
+  localStorage.setItem(WISHLIST_KEY, JSON.stringify(wishlist));
+}
+function updateWishlistBadge() {
+  const wishlist = getWishlist();
+  const badge = document.getElementById('wishlistBadge');
+  if (badge) badge.textContent = wishlist.length;
+  const count = document.getElementById('wishlistCount');
+  if (count) count.textContent = `(${wishlist.length})`;
+}
+function isInWishlist(productId) {
+  return getWishlist().some(item => item.id === productId);
+}
+function addToWishlist(productId, productData) {
+  const wishlist = getWishlist();
+  if (!wishlist.find(item => item.id === productId)) {
+    wishlist.push(productData);
+    saveWishlist(wishlist);
+    updateWishlistBadge();
+    return true;
+  }
+  return false;
+}
+function removeFromWishlist(productId) {
+  let wishlist = getWishlist();
+  wishlist = wishlist.filter(item => item.id !== productId);
+  saveWishlist(wishlist);
+  updateWishlistBadge();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  // ...existing code...
 
   const nav = document.querySelector('.nav');
   const handleScroll = () => {
@@ -86,7 +208,7 @@
 
   const revealElements = [...document.querySelectorAll('.reveal')];
   revealElements.forEach((element, index) => {
-    element.style.setProperty('--reveal-delay', `${Math.min(index * 0.05, 0.4) * 0.8 }s`);
+    element.style.setProperty('--reveal-delay', `${Math.min(index * 0.05, 0.4)}s`);
   });
 
   if (prefersReducedMotion) {
@@ -218,28 +340,7 @@
     startSlider();
   }
 
-  document.querySelectorAll('.action-btn').forEach(button => {
-    button.addEventListener('click', () => {
-      const card = button.closest('.shop-card, .featured-card');
-      const name = card?.querySelector('.shop-card-name, .featured-name')?.textContent?.trim() || 'this piece';
-      const price = card?.querySelector('.shop-card-price, .featured-price')?.textContent?.trim() || 'Price on request';
-      const category = card?.querySelector('.shop-card-category, .featured-type')?.textContent?.trim() || 'Collection';
-
-      openWhatsApp(
-        [
-          'Hello Neyduh\'s Fashion Hub,',
-          '',
-          `I would like to enquire about: ${name}`,
-          `Category: ${category}`,
-          `Price: ${price}`,
-          '',
-          'Please share the next step for ordering.'
-        ].join('\n')
-      );
-
-      showToast(`Opening WhatsApp for ${name}.`);
-    });
-  });
+  // ...existing code...
 
   // CART BUTTONS (Add to Cart)
   document.querySelectorAll('.action-btn-cart').forEach(button => {
