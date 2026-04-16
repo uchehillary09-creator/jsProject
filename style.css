@@ -1057,7 +1057,6 @@ section { padding: 7rem 5%; }
   outline: none;
   resize: none;
   transition: border-color var(--trans);
-  -webkit-appearance: none;
 }
 .form-group input::placeholder,
 .form-group textarea::placeholder { color: #444; }
