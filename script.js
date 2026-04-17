@@ -31,10 +31,11 @@
         const category = card?.querySelector('.shop-card-category')?.textContent?.trim() || 'Collection';
         const image = card?.querySelector('img')?.src || '';
         const productData = { id: productId, name, price, category, image };
-        if (addToWishlist(productId, productData)) {
-          showToast(`${name} added to wishlist.`);
+        if (!isInWishlist(productId)) {
+          addToWishlist(productId, productData);
+          showToast(`${name} has been added to wishlist.`);
         } else {
-          showToast(`${name} is already in wishlist.`);
+          showToast(`${name} has already been added to wishlist.`);
         }
         button.innerHTML = '<i class="fa-solid fa-heart"></i>';
       });
@@ -61,25 +62,7 @@
     });
   });
 
-  // ADD TO WISHLIST BUTTON
-  document.querySelectorAll('.action-btn-wishlist').forEach(button => {
-    button.addEventListener('click', function(event) {
-      event.preventDefault();
-      const card = button.closest('.shop-card');
-      const productId = card?.dataset.productId || card?.querySelector('.shop-card-name')?.textContent;
-      const name = card?.querySelector('.shop-card-name')?.textContent?.trim() || 'Product';
-      const price = card?.querySelector('.shop-card-price')?.textContent?.trim() || 'Price on request';
-      const category = card?.querySelector('.shop-card-category')?.textContent?.trim() || 'Collection';
-      const image = card?.querySelector('img')?.src || '';
-      const productData = { id: productId, name, price, category, image };
-      if (addToWishlist(productId, productData)) {
-        showToast(`${name} added to wishlist.`);
-      } else {
-        showToast(`${name} is already in wishlist.`);
-      }
-      button.innerHTML = '<i class="fa-solid fa-heart"></i>';
-    });
-  });
+  // ...existing code...
 
 // --- GLOBAL UTILITY FUNCTIONS ---
 const WHATSAPP_NUMBER = '2348076550226';
