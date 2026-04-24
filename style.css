@@ -1505,6 +1505,20 @@ body.nav-open { overflow: hidden; }
   transition: transform var(--trans), box-shadow var(--trans), opacity var(--trans), background var(--trans);
 }
 
+.back-to-top.is-ready {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(14px);
+}
+
+.back-to-top.is-ready.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
 .back-to-top:hover,
 .back-to-top:focus-visible {
   transform: translateY(-2px);

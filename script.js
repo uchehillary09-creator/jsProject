@@ -136,11 +136,26 @@ document.addEventListener('DOMContentLoaded', () => {
   // ...existing code...
 
   const nav = document.querySelector('.nav');
+  const backToTopButton = document.querySelector('.back-to-top');
   const handleScroll = () => {
     if (nav) nav.classList.toggle('scrolled', window.scrollY > 36);
+
+    if (backToTopButton) {
+      const shouldShowBackToTop = window.scrollY >= window.innerHeight * 2;
+      backToTopButton.classList.toggle('is-visible', shouldShowBackToTop);
+      backToTopButton.setAttribute('aria-hidden', String(!shouldShowBackToTop));
+      backToTopButton.tabIndex = shouldShowBackToTop ? 0 : -1;
+    }
   };
 
+  if (backToTopButton) {
+    backToTopButton.classList.add('is-ready');
+    backToTopButton.setAttribute('aria-hidden', 'true');
+    backToTopButton.tabIndex = -1;
+  }
+
   window.addEventListener('scroll', handleScroll, { passive: true });
+  window.addEventListener('resize', handleScroll, { passive: true });
   handleScroll();
 
   const burger = document.querySelector('.hamburger');
@@ -947,4 +962,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
-
