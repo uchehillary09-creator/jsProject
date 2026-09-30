@@ -18,3 +18,5 @@ Links & Live Demo
 
 • Live App: https://js-project-3llk.vercel.app/
 • Contact: uchehillary09@gmail.com
+
+![Neyduh's Fashion Hub homepage](screenshots/homepage.png)
